@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="{% static 'css/usermanagement.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>User Management</h1>
+        
+        <!-- Add New User Form -->
+        <div class="add-user">
+            <h2>Add New User</h2>
+            <form action="/add_user" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <button type="submit">Add User</button>
+            </form>
+        </div>
+        
+        <!-- User List -->
+        <div class="user-list">
+            <h2>Existing Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example users; in a real application, these would be dynamically generated -->
+                    <tr>
+                        <td>johndoe</td>
+                        <td>johndoe@example.com</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>janedoe</td>
+                        <td>janedoe@example.com</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- End of example users -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
